@@ -1,50 +1,103 @@
-# Welcome to your Expo app 👋
+# STU — Construction Management CRM
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Мобильная CRM для управления строительными объектами, материалами, расходами, документами и участниками проектов.
 
-## Get started
+Приложение разработано на **React Native и Expo** с приоритетом на нативный пользовательский опыт iOS.
 
-1. Install dependencies
+<!-- Главные скриншоты: замени пути на свои изображения -->
+<p align="center">
+<img width="1536" height="1024" alt="mokap" src="https://github.com/user-attachments/assets/9aa9909e-63f8-47f2-9059-db70db02ee74" />
+</p>
 
-   ```bash
-   npm install
-   ```
+## Возможности
 
-2. Start the app
+- **Строительные объекты** — проекты, этапы, разделы и подразделы с привязкой связанных данных.
+- **Финансовый учёт** — расходы, платежи, плановые и фактические суммы, аналитика.
+- **Материалы и закупки** — учёт материалов, наборы материалов и работа с каталогами.
+- **Документы и файлы** — просмотр, загрузка, импорт и экспорт документов.
+- **Командная работа** — участники проектов, назначение работников, обсуждения и история изменений.
+- **Управление доступом** — разграничение возможностей в зависимости от роли пользователя.
+- **Профиль и аккаунты** — управление учётной записью и административные функции.
 
-   ```bash
-   npx expo start
-   ```
+## Интерфейс
+Интерфейс ориентирован на повседневную работу с проектами: сохранение контекста объекта, понятную структуру данных и быстрый доступ к необходимым действиям.
 
-In the output, you'll find options to open the app in a
+Поддерживаются светлая и тёмная темы.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Технологии
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- React Native
+- Expo
+- Expo Router
+- TypeScript / JavaScript
+- Zustand
+- REST API
+- JWT-аутентификация
+- Expo SecureStore и AsyncStorage
 
-## Get a fresh project
+## Архитектура и особенности
 
-When you're ready, run:
+- Маршрутизация на основе файловой структуры Expo Router.
+- Работа с серверными данными через REST API.
+- Управление состоянием приложения с помощью Zustand.
+- Хранение токенов и локальных данных.
+- Ролевой доступ к экранам и действиям.
+- Работа с файлами и документами.
+- Отображение финансовых показателей на основе существующих данных API.
+
+Редизайн выполнен с сохранением существующих API-контрактов, бизнес-логики и правил доступа. Основное внимание уделено представлению данных и пользовательским сценариям.
+
+## Запуск проекта
+
+### Требования
+
+- Node.js
+- npm
+- Xcode и iOS Simulator для запуска на iOS
+
+### Установка
 
 ```bash
-npm run reset-project
+git clone <repository-url>
+cd <project-directory>
+npm install
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Запуск
 
-## Learn more
+```bash
+npx expo start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+Для запуска в симуляторе iOS:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npx expo run:ios
+```
 
-## Join the community
+Для нативной сборки предварительно должны быть настроены Xcode и необходимые зависимости проекта.
 
-Join our community of developers creating universal apps.
+## Структура проекта
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```text
+app/
+  content/       # Основные разделы приложения
+  inner_pages/   # Экраны проектов и связанные страницы
+
+components/      # Общие компоненты интерфейса
+constants/       # Тема и константы
+hooks/           # Пользовательские хуки
+services/        # Работа с API
+```
+
+Фактическая структура может включать дополнительные модули и каталоги.
+
+## Проверка
+
+После внесения изменений были пройдены проверки TypeScript, lint и `git diff --check`. Также проверены основные пользовательские сценарии на авторизованном iOS Simulator.
+
+Проверка не охватывает все устройства, роли пользователей и сценарии приложения.
+
+---
+
+**STU** — мобильный инструмент для организации строительных процессов, финансового учёта и взаимодействия участников проектов.
