@@ -29,7 +29,7 @@
 - Участие в разработке лендинга проекта.
 - Аудит и доработка кода.
 
-**Портфолио: [dianakuchaeva.ru](https://dianakuchaeva.ru)
+**Портфолио:** [dianakuchaeva.ru](https://dianakuchaeva.ru)
 **GitHub:** [@sweetenerbae](https://github.com/sweetenerbae)
 
 ## Возможности
