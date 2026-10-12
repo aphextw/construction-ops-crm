@@ -11,7 +11,9 @@
 
 ## Контрибьюторы
 
-### Диана Кучаева — Backend Developer
+ ### Диана Кучаева — Backend Developer
+ 
+<img width="120" height="120" alt="Диана Кучаева" src="https://github.com/user-attachments/assets/9f1f4961-d49b-4de7-aca0-3e09dd30ffd3" />
 
 - Разработка backend на **Go** с использованием **PostgreSQL**.
 - Участие в реализации и доработке серверной логики.
