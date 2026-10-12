@@ -9,6 +9,19 @@
 <img width="1536" height="1024" alt="mokap" src="https://github.com/user-attachments/assets/9aa9909e-63f8-47f2-9059-db70db02ee74" />
 </p>
 
+## Контрибьюторы
+
+### Диана Кучаева — Backend Developer
+
+- Разработка backend на **Go** с использованием **PostgreSQL**.
+- Участие в реализации и доработке серверной логики.
+- Работа над интеграцией backend с мобильным приложением.
+- Участие в разработке лендинга проекта.
+- Использование Codex и ручная доработка кода.
+
+**Портфолио:** [dianakuchaeva.ru](https://dianakuchaeva.ru)
+**GitHub:** [@sweetenerbae](https://github.com/sweetenerbae)
+
 ## Возможности
 
 - **Строительные объекты** — проекты, этапы, разделы и подразделы с привязкой связанных данных.
