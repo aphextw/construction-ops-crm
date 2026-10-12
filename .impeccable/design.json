@@ -1,0 +1,110 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-05T11:55:29Z",
+  "title": "Design System: STU Native iOS",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "iOS-inspired blue tint" },
+      "primary-dark": { "role": "primary", "displayName": "Dark-appearance blue tint" },
+      "background": { "role": "neutral", "displayName": "Light grouped background" },
+      "background-dark": { "role": "neutral", "displayName": "Dark grouped background" },
+      "surface": { "role": "neutral", "displayName": "Light grouped surface" },
+      "surface-dark": { "role": "neutral", "displayName": "Dark grouped surface" },
+      "surface-muted": { "role": "neutral", "displayName": "Light muted controls" },
+      "surface-muted-dark": { "role": "neutral", "displayName": "Dark muted controls" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Content large title", "purpose": "Custom React Native headings, not UIKit collapsing large titles." },
+      "headline": { "displayName": "Object identity", "purpose": "Project identity and shared themed title." },
+      "row": { "displayName": "Grouped row", "purpose": "Readable operational navigation labels." }
+    },
+    "shadows": [
+      { "name": "selected-segment", "value": "shadowColor: #000; shadowOffset: {width: 0, height: 1}; shadowRadius: 3; shadowOpacity: 0.12", "purpose": "Observed React Native selection shadow; not a universal card elevation token." }
+    ],
+    "motion": [
+      { "name": "existing-budget-bars", "value": "timing, 800ms", "purpose": "Existing analytics chart animation; reduced-motion behavior is unverified, not a new system-wide motion default." }
+    ],
+    "breakpoints": [],
+    "implementation": {
+      "sources": ["constants/theme.ts", "components/ui/workspace.tsx", "components/project_stuff/projectWorkspace.tsx", "app/content/listPage.tsx", "app/content/PTO_page.jsx", "app/content/analytics.tsx", "app/content/profile.tsx", "app/content/_layout.tsx", "app/inner_pages/projectPage.tsx", "app/inner_pages/expensesPage.tsx"],
+      "platform": "ios",
+      "palette": "System-inspired theme-selected hex; not dynamic UIKit semantic colors.",
+      "native": ["Expo Router native-stack detail headers", "ActionSheetIOS via showActionMenu", "SF Symbols via expo-symbols on iOS"],
+      "custom": ["React Native content large headings", "WorkspaceTabs segmented controls", "WorkspaceButton and ActionRow", "React Native search and placeholders", "React Navigation bottom tabs"],
+      "fallbacks": "WorkspaceIcon uses Ionicons for unmapped/non-iOS icons; direct IconSymbol uses MaterialIcons off iOS. Existing direct icon-library calls remain.",
+      "previewDisclaimer": "Light-appearance schematic HTML/CSS translations only. Not executable app code, native controls, simulator captures, or evidence of visual QA. CSS focus states are documentation-preview affordances, not assertions about app focus styling. No synthetic tonal ramps are presented as implemented app tokens.",
+      "verification": {
+        "attribution": "Final supplied verification packet; checks and visual review not independently rerun by the documentation finisher.",
+        "typecheck": "Passed after scoped fixes.",
+        "lint": "Passed after scoped fixes.",
+        "diffCheck": "git diff --check passed after scoped fixes.",
+        "analyticsAssertions": "Executed by the parent agent, not the human user: passed for 12 months, year boundary, decimal input, invalid input, actual zero, and unpaid expenses.",
+        "simulator": "Initially unauthenticated/login-only; authenticated by user action for the final review.",
+        "authenticatedVisualQA": "Bounded real simulator review completed: dark object list, project overview, sections collapsed/expanded, whole-project expense list, section expenses, and document tab. Light Project Overview screenshot inspected; dark appearance restored. Deadline editor collapsed after the observed inline-form issue; write/persistence behavior not verified by visuals.",
+        "screenshots": ["/tmp/stu-ios-project-dark.png", "/tmp/stu-ios-expenses-dark.png", "/tmp/stu-ios-documents-dark.png", "/tmp/stu-ios-project-light.png"],
+        "screenshotStorage": "Temporary local captures, not versioned fixtures; no separate paths supplied for dark list or collapsed/expanded sections.",
+        "navigation": "CUA AX navigation works; coordinate navigation returned noWindowsAvailable, limiting further navigation tests.",
+        "notVerified": ["iPad", "Dynamic Type", "Other roles", "Upload mutations", "Whole-app visual and functional coverage"],
+        "runtimePackagesAdded": false
+      }
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Workspace Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Existing filled command, with the light primary background retained in both app appearances.",
+      "html": "<button class=\"ds-primary\">Open expenses</button>",
+      "css": ".ds-primary{background:#007AFF;color:#FFFFFF;border:0;border-radius:12px;min-height:50px;padding:12px 16px;font:600 17px/23px system-ui;cursor:pointer}.ds-primary:hover,.ds-primary:active{opacity:.7}.ds-primary:focus-visible{outline:2px solid #007AFF;outline-offset:3px}.ds-primary:disabled{opacity:.45;cursor:default}"
+    },
+    {
+      "name": "Secondary Workspace Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Muted-surface command with tint text; app colors follow its current appearance.",
+      "html": "<button class=\"ds-secondary\">Retry</button>",
+      "css": ".ds-secondary{background:#E5E5EA;color:#007AFF;border:0;border-radius:12px;min-height:50px;padding:12px 16px;font:600 17px/23px system-ui;cursor:pointer}.ds-secondary:hover,.ds-secondary:active{opacity:.7}.ds-secondary:focus-visible{outline:2px solid #007AFF;outline-offset:3px}.ds-secondary:disabled{opacity:.45;cursor:default}"
+    },
+    {
+      "name": "Workspace Segments",
+      "kind": "nav",
+      "refersTo": "segmented-track",
+      "description": "Custom React Native equal-width segments with selected accessibility state, not UISegmentedControl.",
+      "html": "<div class=\"ds-segments\" role=\"tablist\"><button role=\"tab\" aria-selected=\"true\">Overview</button><button role=\"tab\" aria-selected=\"false\">Sections</button><button role=\"tab\" aria-selected=\"false\">Team</button></div>",
+      "css": ".ds-segments{display:flex;background:#E5E5EA;border-radius:10px;padding:3px;gap:0}.ds-segments button{flex:1;min-width:0;min-height:44px;padding:8px 6px;border:0;border-radius:8px;background:transparent;color:#1C1C1E;font:600 13px/18px system-ui;cursor:pointer}.ds-segments button[aria-selected=true]{background:#FFFFFF;box-shadow:0 1px 3px rgba(0,0,0,.12)}.ds-segments button:hover,.ds-segments button:active{opacity:.6}.ds-segments button:focus-visible{outline:2px solid #007AFF;outline-offset:1px}"
+    },
+    {
+      "name": "Grouped Action Row",
+      "kind": "custom",
+      "refersTo": "action-row",
+      "description": "Grouped navigation row with label, optional value, hairline separator, and disclosure.",
+      "html": "<button class=\"ds-action\"><span>Project expenses</span><span class=\"ds-value\">12</span><svg aria-hidden=\"true\" width=\"13\" height=\"13\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"m9 5 7 7-7 7\"/></svg></button>",
+      "css": ".ds-action{display:flex;align-items:center;gap:12px;width:100%;min-height:56px;padding:14px 16px;background:#FFFFFF;color:#1C1C1E;border:0;border-bottom:1px solid #C6C6C8;text-align:left;font:400 17px/23px system-ui;cursor:pointer}.ds-action>span:first-child{flex:1;min-width:0}.ds-action .ds-value{color:#636366;font-size:14px;font-variant-numeric:tabular-nums;max-width:35%}.ds-action svg{color:#636366;flex-shrink:0}.ds-action:hover,.ds-action:active{background:#E5E5EA}.ds-action:focus-visible{outline:2px solid #007AFF;outline-offset:-2px}"
+    },
+    {
+      "name": "Workspace Search",
+      "kind": "input",
+      "refersTo": "search",
+      "description": "Muted React Native TextInput surface, not UISearchController; preview shows the input only.",
+      "html": "<input class=\"ds-search\" type=\"search\" aria-label=\"Search objects\" placeholder=\"Name, number or code\" />",
+      "css": ".ds-search{width:100%;max-width:320px;min-height:44px;padding:3px 14px;border:0;border-radius:10px;background:#E5E5EA;color:#1A1A1A;font:400 15px system-ui}.ds-search::placeholder{color:#636366}.ds-search:hover{background:#E5E5EA}.ds-search:focus-visible{outline:2px solid #007AFF;outline-offset:2px}"
+    },
+    {
+      "name": "Project List Entry",
+      "kind": "card",
+      "refersTo": "project-row",
+      "description": "Repeated object identity surface; example content is schematic, not live project data.",
+      "html": "<button class=\"ds-project\"><span class=\"ds-project-meta\">No. 12</span><strong>Construction object</strong><span class=\"ds-project-meta\">Project analysis</span><span class=\"ds-project-footer\">3 sections</span></button>",
+      "css": ".ds-project{display:flex;flex-direction:column;gap:6px;width:100%;max-width:340px;padding:16px;border:0;border-radius:12px;background:#FFFFFF;color:#1C1C1E;text-align:left;font-family:system-ui;cursor:pointer}.ds-project strong{font-size:18px;font-weight:600;line-height:25px}.ds-project-meta{color:#636366;font-size:13px;line-height:19px}.ds-project-footer{margin-top:6px;padding-top:12px;border-top:1px solid #C6C6C8;color:#636366;font-size:13px}.ds-project:hover,.ds-project:active{opacity:.75}.ds-project:focus-visible{outline:2px solid #007AFF;outline-offset:2px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The iOS Construction Workspace",
+    "overview": "STU is a quiet, task-focused construction CRM with an explicitly iOS-directed redesign. Beauty comes from precise hierarchy, readable financial information, grouped rows, restrained tint, and familiar navigation. This phrase summarizes the user's direction and the implemented system; it is not a separately approved brand metaphor.\n\nThis is a code-extracted record, not a claim of complete UIKit conversion or completed visual validation. The native detail navigation bars and iOS action sheets are real platform-backed surfaces. Large content headings and segmented controls are custom React Native components. Existing forms, charts, sheets, profile content, and expense rows still contain local styling.",
+    "keyCharacteristics": ["iOS-directed, compact, and operational.", "Grouped neutral surfaces with a restrained blue interaction tint.", "Clear object identity, readable amounts, and separate work contexts.", "Existing permissions and business behavior remain authoritative."],
+    "rules": [{ "name": "The Palette Truth Rule", "body": "These are theme-selected hex values inspired by iOS system colors, not dynamic UIKit semantic colors. Automatic increased-contrast or system-material adaptation is not established.", "section": "colors" }],
+    "dos": ["Do use the iOS construction workspace as the design authority for this redesign.", "Do reuse existing theme pairs, grouped rows, system-facing icons, and shared workspace controls.", "Do preserve role checks, route destinations, API contracts, and stage-transition guards.", "Do verify authenticated flows in the iOS simulator and report gaps explicitly."],
+    "donts": ["Don't introduce Android/Material styling as the redesign's visual authority.", "Don't describe custom segmented controls or content headings as UIKit-native components.", "Don't describe system-inspired hex tokens as dynamic semantic system colors.", "Don't equate a passing typecheck or login screenshot with authenticated visual QA."]
+  }
+}
