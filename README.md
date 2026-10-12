@@ -10,18 +10,26 @@
 </p>
 
 ## Контрибьюторы
-
- ### Диана Кучаева — Backend Developer
  
-<img width="120" height="120" alt="Диана Кучаева" src="https://github.com/user-attachments/assets/9f1f4961-d49b-4de7-aca0-3e09dd30ffd3" />
+<table>
+  <tr>
+    <td>
+      <img width="125" height="125" alt="Диана Кучаева" src="https://github.com/user-attachments/assets/9f1f4961-d49b-4de7-aca0-3e09dd30ffd3" />
+    </td>
+    <td>
+      <strong>Диана Кучаева</strong><br />
+      Backend Developer
+    </td>
+  </tr>
+</table>
 
-- Разработка backend на **Go** с использованием **PostgreSQL**.
+- Разработка backend на **Go**.
 - Участие в реализации и доработке серверной логики.
 - Работа над интеграцией backend с мобильным приложением.
 - Участие в разработке лендинга проекта.
-- Использование Codex и ручная доработка кода.
+- Аудит и доработка кода.
 
-**Портфолио:** [dianakuchaeva.ru](https://dianakuchaeva.ru)
+**Портфолио: [dianakuchaeva.ru](https://dianakuchaeva.ru)
 **GitHub:** [@sweetenerbae](https://github.com/sweetenerbae)
 
 ## Возможности
